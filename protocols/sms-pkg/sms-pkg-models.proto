@@ -1,0 +1,14 @@
+syntax = "proto3";
+package models;
+
+option go_package = "protocols/sms-pkg";
+
+message Sms {
+    bytes           sms_uuid        = 1;
+    bytes           user_uuid        = 2;
+    string          check_phrase  = 3;
+    bool           is_approved       = 4;
+    bool           is_disapproved  = 5;
+}
+
+

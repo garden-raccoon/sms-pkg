@@ -1,0 +1,21 @@
+syntax = "proto3";
+package models;
+
+option go_package = "protocols/sms-pkg";
+
+import "sms-pkg-models.proto";
+
+service SmsService {
+    rpc CreateOrUpdateSms(models.Sms) returns(SmsEmpty);
+    rpc SmsBy(SmsByRequest) returns(models.Sms);
+
+    rpc DeleteSms(SmsByRequest) returns(SmsEmpty);
+
+}
+message SmsByRequest {
+    bytes user_uuid = 1;
+}
+
+message SmsEmpty {}
+
+
