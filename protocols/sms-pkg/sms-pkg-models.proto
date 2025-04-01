@@ -9,6 +9,7 @@ message Sms {
     string          check_phrase  = 3;
     bool           is_approved       = 4;
     bool           is_disapproved  = 5;
+    string         phone         = 6;
 }
 
 

@@ -11,6 +11,7 @@ type Sms struct {
 	IsApproved    bool      `json:"is_approved"`
 	IsDisapproved bool      `json:"is_disapproved"`
 	CheckPhrase   string    `json:"check_phrase"`
+	Phone         string    `json:"phone"`
 }
 
 // Proto is
@@ -22,6 +23,7 @@ func ToProto(s Sms) *proto.Sms {
 		IsApproved:    s.IsApproved,
 		IsDisapproved: s.IsDisapproved,
 		CheckPhrase:   s.CheckPhrase,
+		Phone:         s.Phone,
 	}
 	return sms
 }
@@ -34,6 +36,7 @@ func FromProto(pb *proto.Sms) *Sms {
 		IsApproved:    pb.IsApproved,
 		IsDisapproved: pb.IsDisapproved,
 		CheckPhrase:   pb.CheckPhrase,
+		Phone:         pb.Phone,
 	}
 	return sms
 }
