@@ -29,6 +29,7 @@ type Sms struct {
 	IsApproved    bool                   `protobuf:"varint,4,opt,name=is_approved,json=isApproved,proto3" json:"is_approved,omitempty"`
 	IsDisapproved bool                   `protobuf:"varint,5,opt,name=is_disapproved,json=isDisapproved,proto3" json:"is_disapproved,omitempty"`
 	Phone         string                 `protobuf:"bytes,6,opt,name=phone,proto3" json:"phone,omitempty"`
+	ApiSmsUuid    []byte                 `protobuf:"bytes,7,opt,name=api_sms_uuid,json=apiSmsUuid,proto3" json:"api_sms_uuid,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -105,11 +106,18 @@ func (x *Sms) GetPhone() string {
 	return ""
 }
 
+func (x *Sms) GetApiSmsUuid() []byte {
+	if x != nil {
+		return x.ApiSmsUuid
+	}
+	return nil
+}
+
 var File_sms_pkg_models_proto protoreflect.FileDescriptor
 
 const file_sms_pkg_models_proto_rawDesc = "" +
 	"\n" +
-	"\x14sms-pkg-models.proto\x12\x06models\"\xbe\x01\n" +
+	"\x14sms-pkg-models.proto\x12\x06models\"\xe0\x01\n" +
 	"\x03Sms\x12\x19\n" +
 	"\bsms_uuid\x18\x01 \x01(\fR\asmsUuid\x12\x1b\n" +
 	"\tuser_uuid\x18\x02 \x01(\fR\buserUuid\x12!\n" +
@@ -117,7 +125,9 @@ const file_sms_pkg_models_proto_rawDesc = "" +
 	"\vis_approved\x18\x04 \x01(\bR\n" +
 	"isApproved\x12%\n" +
 	"\x0eis_disapproved\x18\x05 \x01(\bR\risDisapproved\x12\x14\n" +
-	"\x05phone\x18\x06 \x01(\tR\x05phoneB\x13Z\x11protocols/sms-pkgb\x06proto3"
+	"\x05phone\x18\x06 \x01(\tR\x05phone\x12 \n" +
+	"\fapi_sms_uuid\x18\a \x01(\fR\n" +
+	"apiSmsUuidB\x13Z\x11protocols/sms-pkgb\x06proto3"
 
 var (
 	file_sms_pkg_models_proto_rawDescOnce sync.Once

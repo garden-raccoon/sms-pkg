@@ -10,6 +10,7 @@ message Sms {
     bool           is_approved       = 4;
     bool           is_disapproved  = 5;
     string         phone         = 6;
+    bytes          api_sms_uuid = 7;
 }
 
 
